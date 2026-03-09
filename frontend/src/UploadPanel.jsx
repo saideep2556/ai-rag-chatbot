@@ -14,7 +14,7 @@ export default function UploadPanel({ uploadedFile, setUploadedFile }) {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/upload", {
+      const res = await fetch("https://ai-rag-chatbot-yqgj.onrender.com/upload", {
         method: "POST",
         body: formData,
       });

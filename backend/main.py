@@ -5,7 +5,6 @@ import os
 from fastapi.middleware.cors import CORSMiddleware
 
 from file_loader import load_pdf
-# from rag_pipeline import process_documents , vector_db
 from query_rag import ask_question, set_active_file
 
 
@@ -16,6 +15,7 @@ app.add_middleware(
     allow_origins=["http://localhost:5173"],
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_origins=["*"],
 )
 
 @app.get("/")

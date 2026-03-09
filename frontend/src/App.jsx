@@ -29,7 +29,7 @@ export default function App() {
 
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/ask?question=${encodeURIComponent(question)}`
+        `https://ai-rag-chatbot-yqgj.onrender.com/ask?question=${encodeURIComponent(question)}`
       );
       const data = await res.json();
       setMessages((prev) => [
