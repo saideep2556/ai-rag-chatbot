@@ -1,11 +1,10 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import FastEmbedEmbeddings
 
 # embedding model
-embedding_model = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+embedding_model = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 
 # vector database
 vector_db = Chroma(

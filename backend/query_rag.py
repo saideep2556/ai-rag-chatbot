@@ -6,12 +6,11 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+from langchain_community.embeddings import FastEmbedEmbeddings
 
 load_dotenv()
 
-embedding_model = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+embedding_model = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 
 vector_db = Chroma(
     collection_name="documents",
