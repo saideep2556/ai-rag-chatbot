@@ -19,7 +19,7 @@ export default function UploadPanel({ uploadedFile, setUploadedFile }) {
         body: formData,
       });
       const data = await res.json();
-      setUploadedFile({ name: file.name, chunks: data.chunks_stored ?? "?" });
+      setUploadedFile({ name: file.name, chunks: data.chunks_created ?? "?" });
     } catch {
       setError("Upload failed. Is the backend running?");
     } finally {
